@@ -16,14 +16,14 @@ const parseExerciseArguments = (args: string[]) => {
   if (slicedArgs.every((arg) => !isNaN(Number(arg)))) {
     return {
       target: Number(slicedArgs[0]),
-      hours: slicedArgs.slice(1).map(Number),
+      hours: slicedArgs.slice(1).map(Number)
     };
   } else {
     throw new Error('Provided values were not numbers!');
   }
 };
 
-const calculateExercises = (
+export const calculateExercises = (
   hours: Array<number>,
   target: number
 ): ExerciseResult => {
@@ -40,7 +40,7 @@ const calculateExercises = (
 
   if (average < target * 0.5) {
     rating = 1;
-    ratingDescription = 'not enough exercise';
+    ratingDescription = 'bad';
   } else if (average >= target * 0.5 && average < target) {
     rating = 2;
     ratingDescription = 'not too bad but could be better';
@@ -56,7 +56,7 @@ const calculateExercises = (
     rating,
     ratingDescription,
     target,
-    average,
+    average
   };
 };
 
