@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/', (_req, res) => {
   console.log('diagnosis ping');
-	res.send(diagnosisService.getEntries())
+  res.send(diagnosisService.getEntries());
 });
 
 export default router;
